@@ -1,22 +1,23 @@
-# Deprecation 
-**This fork is deprecated!**
-
-This plugin/fork has been superseded by plugins that use actual APIs to fetch citation numbers, e.g. [zotero-citationcounts](https://github.com/eschnett/zotero-citationcounts).
-
-Also, see the [Official Zotero Plugins Page](https://www.zotero.org/support/plugins) for more Zotero plugins.
-
 # Zotero Scholar Citations (ZSC)
 This is an add-on for Zotero, a research source management tool. The add-on automatically fetches numbers of citations of your Zotero items from Google Scholar and makes it possible to sort your items by the citations. Moreover, it allows batch updating the citations, as they may change over time.
 
-Read about how the add-on was made: http://blog.beloglazov.info/2009/10/zotero-citations-from-scholar-en.html
+# New fork 
 
-## Batching & CAPTCHAs
-When updating multiple citations in a batch, it may happen that citation queries are blocked by Google Scholar for multiple automated requests. If a blockage happens, the add-on opens a browser window and directs it to http://scholar.google.com/, where you should see a Captcha displayed by Google Scholar, which you need to enter to get unblocked and then re-try updating the citations. It may happen that Google Scholar displays a message like the following "We're sorry... but your computer or network may be sending automated queries. To protect our users, we can't process your request right now." In that case, the only solution is to wait for a while until Google unblocks you.
+This is a fork of the depreciated https://github.com/MaxKuehn/zotero-scholar-citations which is itself a fork of https://github.com/beloglazov/zotero-scholar-citations.
+
+The goal of this fork is to remove additional text in the citations field so that it's simply an integer. Currently, there is text "ZSCC: " and a trail of leading zeros. This makes it harder to sort papers and takes up a lot of room in the 'Extra' column.
+
+The previous fork was depreciated in 2019. However, it still works well for me. Problems can occur when doing batches because the Google API has become more restricted. However, there doesn't seem to be a problem with getting the requests when the paper is originally downloaded or for making individual requests. 
+
+For another option that uses other APIs to fetch citation numbers see [zotero-citationcounts](https://github.com/eschnett/zotero-citationcounts). Also, see the [Official Zotero Plugins Page](https://www.zotero.org/support/plugins) for more Zotero plugins.
 
 ## Installation
 The add-on supports Zotero Standalone. To install it:
 1. Download the lastest version of the add-on from [the release page](https://github.com/MaxKuehn/zotero-scholar-citations/releases). It's an ".xpi" file.
 1. In Zotero (Standalone) go to Tools -> Add-ons -> click the settings button in the top-right corner -> Install Add-on From File -> select the downloaded file and restart Zotero.
+
+## Batching & CAPTCHAs
+When updating multiple citations in a batch, it may happen that citation queries are blocked by Google Scholar for multiple automated requests. If a blockage happens, the add-on opens a browser window and directs it to http://scholar.google.com/, where you should see a Captcha displayed by Google Scholar, which you need to enter to get unblocked and then re-try updating the citations. It may happen that Google Scholar displays a message like the following "We're sorry... but your computer or network may be sending automated queries. To protect our users, we can't process your request right now." In that case, the only solution is to wait for a while until Google unblocks you.
 
 ## Extra Column Info
 Currently, Zotero doesn't have any special field for the number of citations, that's why it is stored in the "Extra" field. To sort by this field you have to add it in the source listing table.
@@ -63,8 +64,7 @@ One combination of authors will certainly yield the correct search.
 
 You can also temporarly recreate that combination in Zotero. ZSC will then successfully query that item. Once you re-add the author however, updates will fail again. :(
 
-## RoadMap
-The [RoadMap can be found here](https://github.com/MaxKuehn/zotero-scholar-citations/blob/develop/RoadMap.md).
+Read about how the orginal add-on was made: http://blog.beloglazov.info/2009/10/zotero-citations-from-scholar-en.html
 
 ## Why the Fork
 
