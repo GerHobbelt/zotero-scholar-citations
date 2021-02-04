@@ -2,7 +2,9 @@ let zsc = {
     _captchaString: '',
     _citedPrefixString: 'Cited by ',
     _citeCountStrLength: 7,
-    _extraPrefix: 'ZSCC',
+    // changed to remove prefix
+    _extraPrefix: '',
+    // _extraPrefix: 'ZSCC',
     _extraEntrySep: ' \n',
     _noData : 'NoCitationData',
     _searchblackList: new RegExp('[-+~*":]', 'g'),
@@ -244,11 +246,13 @@ zsc.cleanTitle = function(title) {
     return title.replace(zsc._searchblackList, ' ');
 };
 
+// I think this is what I want to remove
 zsc.padLeftWithZeroes = function(numStr) {
     let output = '';
-    let cnt = this._citeCountStrLength - numStr.length;
-    for (let i = 0; i < cnt; i++) { output += '0'; }
-    output += numStr;
+    // un-comment out the below to add zeros back in
+    // let cnt = this._citeCountStrLength - numStr.length;
+    // for (let i = 0; i < cnt; i++) { output += '0'; }
+    // output += numStr;
     return output;
 };
 
