@@ -9,7 +9,7 @@ This is a fork of the depreciated https://github.com/MaxKuehn/zotero-scholar-cit
 
 This fork removes additional text in the citation field so that it's simply an integer. This makes it easier to sort by citation counts and takes up less room.
 
-The previous fork was depreciated in 2019. However, it still worked well for me! Where problems *can* occur is when doing large batches, because the Google Scholar scraper is quite restrictive. However, it works well for getting the requests when the paper is originally downloaded or when making individual/ small batch requests. 
+The previous fork was depreciated in 2019. However, it still worked well for me! Where problems *can* occur is when doing large batches, because the Google Scholar scraper is quite restrictive. However, it works well for getting the requests when the paper is originally downloaded or when making individual/ small batch requests. Just don't get too greedy ;)
 
 ## Installation
 The add-on supports Zotero Standalone. To install it:
