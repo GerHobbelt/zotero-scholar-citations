@@ -28,12 +28,6 @@ As of Version 2.0.2 items whose citation count could not be updated will be mark
 
 The format of the staleness counter allows you to search for items with stale citation data by entering `[s` in Zoteros search bar.
 
-### Existing "Extra"-Column Content
-ZSC will
-- update legacy ZSC "extra"-content, i.e. 5 digit citation counts and "No Citation Data" entries
-- respect content that is already in the "Extra"-field by simply prepending the citation count to any existing content
-    - this allows you to sort by the extra field to easily get the most/least cited items
-
 ## Why is ZSC unable retrieve the citation count for item X?
 The most likely culprit is that ZSC search is too precise :^). Some Items do not have as complete of an author list on google scholar as they have in Zotero.
 
@@ -49,20 +43,15 @@ One combination of authors will certainly yield the correct search.
 
 You can also temporarly recreate that combination in Zotero. ZSC will then successfully query that item. Once you re-add the author however, updates will fail again. :(
 
-Read about how the orginal add-on was made: http://blog.beloglazov.info/2009/10/zotero-citations-from-scholar-en.html
-
 For another option that uses other APIs to fetch citation numbers see [zotero-citationcounts](https://github.com/eschnett/zotero-citationcounts). Also, see the [Official Zotero Plugins Page](https://www.zotero.org/support/plugins) for more Zotero plugins.
 
-## Why the Fork
+## Creators/ maintainers
 
-The original maintainer [Anton Beloglazov](https://github.com/beloglazov) seems semi-active.
+The original maintainer was [Anton Beloglazov](https://github.com/beloglazov). Read about how the orginal add-on was made: http://blog.beloglazov.info/2009/10/zotero-citations-from-scholar-en.html
 
-[Texot](https://github.com/tete1030) fixed some stuff that needed fixing BADLY, that is
+Significant work was done by [MaxKuehn](https://github.com/MaxKuehn) and [Texot](https://github.com/tete1030). I only changed the format of the citations outputted into the Extra field. 
 
-- Fix detection of google robot checking
-- Show `No Citation Data` in failure cases instead of `00000`
-
-**But there's more that should be done!**
+** more to be done! ** See the previous author's [roadmap](https://github.com/smlum/zotero-scholar-citations/blob/develop/RoadMap.md).
 
 # License
 
