@@ -1,10 +1,15 @@
+// right now the below appends the citation to whatever's already in the Extra field
+// and it starts each one with ZCSS and a load of zeros
+// I want it to clear whatever's in Extra DONE
+// then just add the number of citations DONE
+// make no citation simpler
+
+
 let zsc = {
     _captchaString: '',
     _citedPrefixString: 'Cited by ',
     _citeCountStrLength: 7,
-    // changed to remove prefix
-    _extraPrefix: '',
-    // _extraPrefix: 'ZSCC',
+    _extraPrefix: 'ZSCC',
     _extraEntrySep: ' \n',
     _noData : 'NoCitationData',
     _searchblackList: new RegExp('[-+~*":]', 'g'),
@@ -120,7 +125,8 @@ zsc.processItems = function(items) {
 };
 
 zsc.updateItem = function(item, citeCount) {
-    let curExtra = item.getField('extra');
+    // let curExtra = item.getField('extra');
+    let curExtra = '';
     let matches = curExtra.match(zsc._extraRegex);
     let newExtra = '';
 
@@ -246,22 +252,30 @@ zsc.cleanTitle = function(title) {
     return title.replace(zsc._searchblackList, ' ');
 };
 
-// I think this is what I want to remove
+// SAM This adds leading zeros. I stopped it from doing that. This should be cleaned up
 zsc.padLeftWithZeroes = function(numStr) {
     let output = '';
-    // un-comment out the below to add zeros back in
-    // let cnt = this._citeCountStrLength - numStr.length;
+    let cnt = this._citeCountStrLength - numStr.length;
     // for (let i = 0; i < cnt; i++) { output += '0'; }
-    // output += numStr;
+    output += numStr;
     return output;
 };
 
+// SAM this just gives the citation could
 zsc.buildCiteCountString = function(citeCount) {
     if (citeCount < 0)
-        return this._extraPrefix + ': ' + this._noData;
+        return this._noData;
     else
-        return this._extraPrefix + ': ' + this.padLeftWithZeroes(citeCount.toString());
+        return this.padLeftWithZeroes(citeCount.toString());
 };
+
+// SAM old version below
+// zsc.buildCiteCountString = function(citeCount) {
+//     if (citeCount < 0)
+//         return this._extraPrefix + ': ' + this._noData;
+//     else
+//         return this._extraPrefix + ': ' + this.padLeftWithZeroes(citeCount.toString());
+// };
 
 zsc.buildStalenessString = function(stalenessCount) {
     return '[s' + stalenessCount + ']';
