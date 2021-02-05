@@ -1,7 +1,7 @@
 # Zotero Scholar Citations (ZSC)
-This is an add-on for Zotero, a research source management tool. The add-on automatically fetches the number of citations for Zotero items from Google Scholar. It adds them to the 'Extra' field in Zotero and allows you to sort by number of citations. 
+This is an add-on for [Zotero](https://www.zotero.org/) that automatically fetches the number of citations for Zotero items from Google Scholar. It adds them to the 'Extra' field in Zotero and allows you to sort by number of citations. 
 
-It searches for the number of citations when you add the paper or when you select "Update selections" for a Zotero item. It also allows (limited) batch updating the citations.
+It searches for the number of citations when you add the paper or when you select "Update selections" for a Zotero item. It also allows (limited) batch updating of citation counts.
 
 ## Why a new fork?
 
@@ -9,7 +9,7 @@ This is a fork of the depreciated https://github.com/MaxKuehn/zotero-scholar-cit
 
 This fork removes additional text in the citation field so that it's simply an integer. This makes it easier to sort by citation counts and takes up less room.
 
-The previous fork was depreciated in 2019. However, it still worked well for me! Where problems *can* occur is when doing large batches, because the Google API is quite restricted. However, it works well for getting the requests when the paper is originally downloaded or when making individual/ small batch requests. 
+The previous fork was depreciated in 2019. However, it still worked well for me! Where problems *can* occur is when doing large batches, because the Google Scholar scraper is quite restrictive. However, it works well for getting the requests when the paper is originally downloaded or when making individual/ small batch requests. 
 
 ## Installation
 The add-on supports Zotero Standalone. To install it:
@@ -49,7 +49,9 @@ For another option that uses other APIs to fetch citation numbers see [zotero-ci
 
 The original maintainer was [Anton Beloglazov](https://github.com/beloglazov). Read about how the orginal add-on was made: http://blog.beloglazov.info/2009/10/zotero-citations-from-scholar-en.html
 
-Significant work was done by [MaxKuehn](https://github.com/MaxKuehn) and [Texot](https://github.com/tete1030). I only changed the format of the citations outputted into the Extra field. 
+Significant work was done by [MaxKuehn](https://github.com/MaxKuehn) and [Texot](https://github.com/tete1030). 
+
+All I did was change the format of the citations outputted into the Extra field and update the docs a little!
 
 ** more to be done! ** See the previous author's [roadmap](https://github.com/smlum/zotero-scholar-citations/blob/develop/RoadMap.md).
 
